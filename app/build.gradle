@@ -1,0 +1,162 @@
+apply plugin: 'com.android.application'
+apply plugin: 'android-apt'
+def AAVersion = '3.3.2'
+
+def releaseTime() {
+    return new Date().format("yyyy-MM-dd", TimeZone.getTimeZone("UTC"))
+}
+
+android {
+
+    packagingOptions {
+//        看起来是因为多个 jar 包里包含了同样的文件（NOTICE.txt），导致打包时因为担心相互覆盖问题而提示出错。
+//        尝试下在 app 下的 build.gradle 中的 android 部分增加一段配置：
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/LICENSE.txt'
+    }
+
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    dexOptions {
+        preDexLibraries = true;
+        javaMaxHeapSize "4g"
+    }
+
+
+    defaultConfig {
+        applicationId "com.beijing.navi"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+        // dex突破65535的限制
+        multiDexEnabled true
+        rootProject.ext.variantRelease = false
+    }
+
+    //签名
+    signingConfigs {
+        debug {
+
+        }
+
+        release {
+            storeFile file("$projectDir/amap.keystore")
+            storePassword "www.mengshaojie.com"
+            keyAlias "map.keystore"
+            keyPassword "www.mengshaojie.com"
+        }
+    }
+
+
+    buildTypes {
+        debug {
+            // 显示Log
+            buildConfigField "boolean", "LOG_DEBUG", rootProject.ext.logDebug.toString()
+            versionNameSuffix "-debug"
+            //是否进行混淆
+            minifyEnabled false
+            zipAlignEnabled false
+            shrinkResources false
+            signingConfig signingConfigs.release
+        }
+
+        release {
+            // 不显示Log
+            buildConfigField "boolean", "LOG_DEBUG", rootProject.ext.logDebug.toString()
+            //是否进行混淆
+            minifyEnabled false
+            zipAlignEnabled true
+            // 移除无用的resource文件
+            shrinkResources true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.release
+            applicationVariants.all { variant ->
+                variant.outputs.each { output ->
+                    def outputFile = output.outputFile
+                    if (outputFile != null && outputFile.name.endsWith('.apk')) {
+                        // 输出apk名称为demo_v1.0_2015-01-15_wandoujia.apk
+//                        def fileName = "demo${defaultConfig.versionName}_${releaseTime()}_${variant.productFlavors[0].name}.apk"
+                        def fileName = "demo_${variant.productFlavors[0].name}.apk"
+                        output.outputFile = new File(outputFile.parent, fileName)
+                    }
+                }
+            }
+        }
+    }
+
+    //java 版本
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+    sourceSets {
+        main {
+            res.srcDirs = ['src/main/res', 'src/main/res/drawable-xhdpi', 'src/main/res/anim', 'src/main/res/mipmap-xhdpi']
+        }
+    }
+
+    task nativeLibsToJar(type: Zip, description: "create a jar archive of the native libs") {
+        destinationDir file("$projectDir/libs")
+        baseName "Native_Libs2"
+        extension "jar"
+        from fileTree(dir: "libs", include: "**/*.so")
+        into "lib"
+    }
+
+    tasks.withType(JavaCompile) {
+        compileTask -> compileTask.dependsOn(nativeLibsToJar)
+    }
+
+
+    productFlavors {
+
+        mxc {}
+        zhidian {}
+        wandoujia {}
+        c360 {}
+        baidu {}
+        xiaomi {}
+        tencent {}
+        i91 {}
+        meizu {}
+        yingyonghui {}
+        huawei {}
+        update {}
+        androidMarket {}
+
+        productFlavors.all { flavor ->
+            flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]
+        }
+
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+    apt "org.androidannotations:androidannotations:$AAVersion"
+    compile "org.androidannotations:androidannotations-api:$AAVersion"
+    compile files('src/main/libs/qiniu-android-sdk-7.0.7.1.jar')
+    compile 'com.android.support:cardview-v7:23.0.1'
+    compile 'com.android.support:recyclerview-v7:23.0.1'
+    compile 'com.android.support:appcompat-v7:23.4.0'
+    compile 'com.umeng.analytics:analytics:latest.integration'
+    releaseCompile project(path: ':PhoneCore', configuration: 'release')
+    debugCompile project(path: ':PhoneCore', configuration: 'debug')
+}
+
+apt {
+    arguments {
+        androidManifestFile variant.outputs[0].processResources.manifestFile
+        // you should set your package name here if you are using different application IDs
+        // resourcePackageName "your.package.name"
+
+        // You can set optional annotation processing options here, like these commented options:
+        // logLevel 'INFO'
+        // logFile '/var/log/aa.log'
+        resourcePackageName 'com.beijing.navi'
+    }
+}
+

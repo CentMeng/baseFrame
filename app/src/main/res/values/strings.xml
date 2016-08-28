@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Navi</string>
+    <string name="cancel">取消</string>
+    <string name="back">返回</string>
+    <string name="next_step">下一步</string>
+    <string name="login">登录</string>
+    <string name="register">注册</string>
+    <string name="reset">重置</string>
+    <string name="confirm_info">确认信息</string>
+    <string name="mobile">手机</string>
+    <string name="revise_password">修改密码</string>
+    <string name="about_us">关于我们</string>
+    <string name="logout">注销登录</string>
+    <string name="quit">退出</string>
+    <string name="captcha">验证码</string>
+    <string name="complete">完成</string>
+    <string name="reset_password">设置密码</string>
+    <string name="forget_password">忘记密码?</string>
+    <string name="settings">设置</string>
+    <string name="submit">确认</string>
+    <string name="take_photo">照相</string>
+    <string name="choose_photo">相册</string>
+    <string name="loading">加载中</string>
+    <string name="nonet"></string>
+    <string name="netlong"></string>
+    <string name="digits">0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ,._!?;:@</string>
+</resources>

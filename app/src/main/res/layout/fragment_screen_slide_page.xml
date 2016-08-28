@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.facebook.drawee.view.SimpleDraweeView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fresco="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/pic"
+    fresco:roundedCornerRadius="5dp"
+    fresco:actualImageScaleType="centerCrop"
+    fresco:fadeDuration="0"
+    fresco:placeholderImage="@drawable/bg_notus"
+    fresco:placeholderImageScaleType="fitXY"
+    fresco:failureImage="@drawable/bg_notus"
+    fresco:failureImageScaleType="fitXY"
+    fresco:retryImage="@drawable/bg_notus"
+    fresco:retryImageScaleType="fitXY"
+    fresco:progressBarImage="@drawable/bg_notus"
+    fresco:progressBarImageScaleType="fitXY"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" />

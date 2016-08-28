@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/actionbar"
+    android:orientation="vertical" >
+
+    <View
+        android:id="@+id/cutline"
+        android:background="@color/background"
+        android:layout_width="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_height="1px" />
+
+    <ImageButton
+        android:id="@+id/ib_action_bar_left"
+        android:layout_width="60dp"
+        android:layout_height="match_parent"
+        android:layout_above="@id/cutline"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:background="@null"
+        android:scaleType="centerInside"
+        android:src="@mipmap/ic_back_grey"
+        android:clickable="true"
+        />
+
+    <TextView
+        android:id="@+id/action_bar_title"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_above="@id/cutline"
+        android:layout_centerInParent="true"
+        android:text="北京"
+        android:drawablePadding="@dimen/padding_half"
+        style="@style/sevenBlack"
+        android:gravity="center"
+        android:layout_marginLeft="@dimen/padding"
+        android:layout_marginRight="@dimen/padding"
+        android:visibility="gone"
+        />
+
+
+    <TextView
+        android:id="@+id/ib_action_bar_right"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_above="@id/cutline"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:text="@string/register"
+        android:drawablePadding="@dimen/padding_half"
+        style="@style/sevenBlack"
+        android:gravity="center"
+        android:paddingLeft="@dimen/padding"
+        android:paddingRight="@dimen/padding_double"
+        android:textColor="@color/basecolor"
+        android:clickable="true"
+        android:visibility="gone"
+        />
+
+</RelativeLayout>

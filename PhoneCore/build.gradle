@@ -1,0 +1,74 @@
+apply plugin: 'android-library'
+
+dependencies {
+    compile 'com.nineoldandroids:library:2.4.0'
+    releaseCompile project(path: ':HttpApiCore' ,configuration: 'release')
+    debugCompile project(path: ':HttpApiCore', configuration: 'debug')
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'com.android.support:design:23.3.0'
+    // 编译libs目录下的所有jar包
+    compile('com.facebook.fresco:fresco:0.11.0') {
+//        exclude group: 'com.parse.bolts',
+//                module: 'bolts-android'
+        exclude group: 'com.parse.bolts',
+                module: 'bolts-tasks'
+        exclude group: 'com.parse.bolts',
+                module: 'bolts-applinks';
+    }
+}
+
+android {
+    publishNonDefault true
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    useLibrary 'org.apache.http.legacy'
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+    }
+
+    buildTypes {
+
+        debug {
+            buildConfigField "boolean", "LOG_DEBUG", rootProject.ext.logDebug.toString()
+            zipAlignEnabled false
+            shrinkResources false
+        }
+
+        release {
+            buildConfigField "boolean", "LOG_DEBUG", rootProject.ext.logDebug.toString()
+            zipAlignEnabled true
+            // 移除无用的resource文件
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            java.srcDirs = ['src']
+            resources.srcDirs = ['src']
+            aidl.srcDirs = ['src']
+            renderscript.srcDirs = ['src']
+            res.srcDirs = ['res']
+            assets.srcDirs = ['assets']
+        }
+
+        // Move the tests to tests/java, tests/res, etc...
+        instrumentTest.setRoot('tests')
+
+        debug.setRoot('build-types/debug')
+        release.setRoot('build-types/release')
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+
+}

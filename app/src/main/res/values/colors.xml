@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FF12ADFA</color>
+    <color name="colorPrimaryDark">#FF12ADFA</color>
+    <color name="colorAccent">#FF12ADFA</color>
+
+    <color name="background">#F5F5F5</color>
+    <color name="basecolor">#FF12ADFA</color>
+    <color name="basecolor_press">#FF0196DD</color>
+    <color name="basecolor_press_70">#700196DD</color>
+    <color name="cancelcolor">#515253</color>
+    <color name="darkgray">#A9A9A9</color>
+    <color name="gray">#ccc</color>
+    <color name="gray_normal">#EEEEEE</color>
+    <color name="lightgray">#D7D7D7</color>
+    <color name="black">#262727</color>
+    <color name="grayback">#E3E4E6</color>
+    <color name="lightblack">#858689</color>
+    <color name="transalte">#01000000</color>
+    <color name="actionbar">#ffffff</color>
+    <color name="trancolor">#00FFFFFF</color>
+    <color name="red">#ff2222</color>
+    <color name="darkred">#c23329</color>
+    <color name="yellow">#FAC35E</color>
+    <color name="yida_yellow">#ffc600</color>
+    <color name="green">#9BD25A</color>
+    <color name="lightblue">#70D1EA</color>
+    <color name="lighttransblack">#505153</color>
+    <color name="blue">#1289ff</color>
+    <color name="lightgray_light">#F6F6F6</color>
+
+    <color name="material_blue_500">#5677fc</color>.
+    <color name="material_blue_700">#5677fc</color>.
+    <color name="material_green_A200">#5677fc</color>.
+    <!-- 半透明 -->
+    <color name="translucent_light_background">#1D000000</color>
+    <color name="translucent_background">#3D000000</color>
+    <color name="translucent_over_background">#6D000000</color>
+
+    <!-- 橘色 -->
+    <color name="orange">#E86D25</color>
+    <!--浅橘色-->
+    <color name="lightorange">#F7F2EC</color>
+    <color name="lightdarkorange">#F3E7D7</color>
+    <!--浅青色-->
+    <color name="lightcyan">#E8F6F6</color>
+    <color name="lightdarkcyan">#DCEDE9</color>
+    <!--浅绿色-->
+    <color name="lightgreen">#F2F6E8</color>
+    <color name="lightdarkgreen">#ECEEE0</color>
+    <!-- 浅黑色 -->
+    <color name="transblack">#333333</color>
+
+    <color name="lightred">#EB4F38</color>
+
+    <!-- 透明色 -->
+    <color name="transparent">#00000000</color>
+    <color name="black_overlay">#66000000</color>
+    <color name="banner_title">#30000000</color>
+    <color name="white_overlay">#22ffffff</color>
+</resources>

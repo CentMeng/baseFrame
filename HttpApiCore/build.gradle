@@ -1,0 +1,77 @@
+apply plugin: 'com.android.library'
+
+android {
+    publishNonDefault true
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+    }
+    buildTypes {
+
+        debug {
+            // 显示Log
+//            buildConfigField "boolean", "LOG_DEBUG", rootProject.ext.logDebug.toString()
+//            buildConfigField "String", "URL_BASE", "\"http://zhid58.com:8080/api\""
+//            buildConfigField "String", "URL_SHARE", "\"http://zhid58.com\""
+//            buildConfigField "String", "URL_SHARE_COUPON", "\"http://zhid58.com/coupon?pid=\""
+//            buildConfigField "String", "URL_SHARE_DISCLOSE","\"http://zhid58.com/broke/\""
+//            buildConfigField "String", "URL_SHARE_ARTICLE","\"http://zhid58.com/dynamic/\""
+//            buildConfigField "String", "URL_SHARE_ACTIVITY","\"http://zhid58.com/activity/\""
+//            buildConfigField "String", "URL_SHARE_SCHOOL","\"http://zhid58.com/college/\""
+//            buildConfigField "String", "URL_SHARE_APP","\"http://a.app.qq.com/o/simple.jsp?pkgname=com.luoteng.folk\""
+            buildConfigField "String", "URL_BASE", "\"http://test.zhid58.com:8080/api\""
+            buildConfigField "String", "URL_SHARE", "\"http://wetest.zhid58.com\""
+            buildConfigField "String", "URL_SHARE_COUPON", "\"http://wetest.zhid58.com/coupon?pid=\""
+            buildConfigField "String", "URL_SHARE_DISCLOSE","\"http://wetest.zhid58.com/broke/\""
+            buildConfigField "String", "URL_SHARE_ARTICLE","\"http://wetest.zhid58.com/dynamic/\""
+            buildConfigField "String", "URL_SHARE_ACTIVITY","\"http://wetest.zhid58.com/activity/\""
+            buildConfigField "String", "URL_SHARE_SCHOOL","\"http://wetest.zhid58.com/college/\""
+            buildConfigField "String", "URL_SHARE_APP","\"http://a.app.qq.com/o/simple.jsp?pkgname=com.luoteng.folk\""
+            //是否进行混淆
+//            versionNameSuffix "-debug"
+            minifyEnabled false
+            zipAlignEnabled false
+            shrinkResources false
+        }
+
+        release {
+            // 不显示Log
+            buildConfigField "boolean", "LOG_DEBUG", rootProject.ext.logDebug.toString()
+            buildConfigField "String", "URL_BASE", "\"http://zhid58.com:8080/api\""
+            buildConfigField "String", "URL_SHARE", "\"http://zhid58.com\""
+            buildConfigField "String", "URL_SHARE_COUPON", "\"http://zhid58.com/coupon?pid=\""
+            buildConfigField "String", "URL_SHARE_DISCLOSE","\"http://zhid58.com/broke/\""
+            buildConfigField "String", "URL_SHARE_ARTICLE","\"http://zhid58.com/dynamic/\""
+            buildConfigField "String", "URL_SHARE_ACTIVITY","\"http://zhid58.com/activity/\""
+            buildConfigField "String", "URL_SHARE_SCHOOL","\"http://zhid58.com/college/\""
+            buildConfigField "String", "URL_SHARE_APP","\"http://a.app.qq.com/o/simple.jsp?pkgname=com.luoteng.folk\""
+            //是否进行混淆
+            minifyEnabled false
+            zipAlignEnabled true
+            // 移除无用的resource文件
+            shrinkResources false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    //java 版本
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+
+
+}
+
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile project(':Volley')
+    compile 'com.android.support:support-v4:23.1.0'
+    compile files('libs/joda-time-2.1.jar')
+    compile project(':litepal')
+}

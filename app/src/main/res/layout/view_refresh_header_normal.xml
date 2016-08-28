@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/tv_normal_refresh_header_status"
+        android:layout_marginBottom="15dp"
+        android:layout_marginRight="10dip"
+        android:layout_marginTop="-6dp">
+
+        <ImageView
+            android:id="@+id/iv_normal_refresh_header_arrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:src="@mipmap/ic_loading0" />
+
+        <ImageView
+            android:id="@+id/iv_normal_refresh_header_chrysanthemum"
+            android:visibility="invisible"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/progress_drawable"/>
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/tv_normal_refresh_header_status"
+        android:layout_width="60dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:text="下拉刷新"
+        android:textColor="#777"
+        android:textSize="12sp" />
+</RelativeLayout>

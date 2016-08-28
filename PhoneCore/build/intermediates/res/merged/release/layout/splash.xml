@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@null"
+    android:gravity="center"
+    android:orientation="horizontal" >
+
+    <RelativeLayout
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:background="@drawable/splashbg"
+        android:padding="20dp" >
+
+
+        <ImageView
+            android:id="@+id/loading_process_dialog_progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:scaleType="centerInside"
+            android:src="@drawable/loading_01" >
+        </ImageView>
+
+        <TextView
+            android:id="@+id/tv_con"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/loading_process_dialog_progressBar"
+            android:layout_marginTop="10dp"
+            android:text="加载中"
+            android:textColor="#ffffff" />
+    </RelativeLayout>
+
+</LinearLayout>
