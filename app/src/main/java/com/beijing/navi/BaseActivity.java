@@ -23,11 +23,12 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.core.utils.OnClickUtil;
-import com.android.core.utils.SharePreferenceStorageService;
+import com.android.core.utils.File.FileUtils;
 import com.android.core.utils.Toast.ToastUtil;
 import com.android.core.utils.Toast.ToastUtilHaveRight;
-import com.android.core.utils.phone.BaseTool;
+import com.android.core.utils.phone.BaseTools;
+import com.android.core.utils.phone.OnClickUtil;
+import com.android.core.utils.phone.SharePreferenceStorageService;
 import com.android.volley.VolleyError;
 import com.beijing.navi.activity.WebViewActivity;
 import com.beijing.navi.receiver.RetryLoginReceiver;
@@ -43,7 +44,6 @@ import com.beijing.navi.view.wheelview.WheelView;
 import com.core.api.ApiSettings;
 import com.core.api.common.HttpService;
 import com.core.api.event.ApiResponse;
-import com.core.api.utils.FileUtils;
 import com.core.api.utils.cache.BitmapCache;
 import com.core.api.utils.cache.DiskCacheParams;
 import com.core.api.utils.cache.DiskLruCache;
@@ -169,7 +169,7 @@ public class BaseActivity extends FragmentActivity {
             }
             if (diskLruCache == null) {
                 //缓存地址，程序版本号，同一个Key对应多少个文件，可以缓存多少字节数据
-                diskLruCache = DiskLruCache.open(cacheDir, BaseTool.getVersionCode(this), 1, DiskCacheParams.DEFAULT_DISKCACHE_SIZE);
+                diskLruCache = DiskLruCache.open(cacheDir, BaseTools.getVersionCode(this), 1, DiskCacheParams.DEFAULT_DISKCACHE_SIZE);
             }
         } catch (Exception e) {
             e.printStackTrace();

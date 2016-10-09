@@ -8,15 +8,17 @@ import android.os.Message;
 import android.os.SystemClock;
 import android.util.Log;
 
-import com.core.api.utils.FileUtils;
+import com.android.core.utils.File.FileUtils;
 
 import java.io.File;
 import java.io.IOException;
 import java.util.Date;
 
 /**
- * @author CentMeng csdn@vip.163.com on 16/7/5.
- * 录音相关
+ * @author Vincent.M
+ * @date 16/10/09 下午6:50
+ * @copyright ©2016 孟祥程 All Rights Reserved
+ * @desc 录音相关
  */
 public class VoiceRecorder {
 

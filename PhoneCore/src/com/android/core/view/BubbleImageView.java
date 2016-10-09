@@ -19,7 +19,7 @@ import android.util.AttributeSet;
 import android.widget.ImageView;
 
 import com.android.core.R;
-import com.android.core.utils.Screen.DesityUtil;
+import com.android.core.utils.phone.DisplayUtils;
 
 
 /**
@@ -32,10 +32,10 @@ public class BubbleImageView extends ImageView {
 	private static final Bitmap.Config BITMAP_CONFIG = Bitmap.Config.ARGB_8888;
 	private static final int COLORDRAWABLE_DIMENSION = 1;
 	private ColorFilter cf;
-	private int mAngle = DesityUtil.dip2px(getContext(), 10);
-	private int mArrowTop =  DesityUtil.dip2px(getContext(), 25);
-	private int mArrowWidth =  DesityUtil.dip2px(getContext(), 20);
-	private int mArrowHeight =  DesityUtil.dip2px(getContext(), 20);
+	private int mAngle = DisplayUtils.dip2px(getContext(), 10);
+	private int mArrowTop =  DisplayUtils.dip2px(getContext(), 25);
+	private int mArrowWidth =  DisplayUtils.dip2px(getContext(), 20);
+	private int mArrowHeight =  DisplayUtils.dip2px(getContext(), 20);
 	private int mArrowOffset = 0;
 	private int mArrowLocation = LOCATION_LEFT;
 

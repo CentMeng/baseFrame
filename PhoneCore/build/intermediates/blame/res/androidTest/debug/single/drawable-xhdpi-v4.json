@@ -156,12 +156,12 @@
         "source": "/Users/mengxiangcheng/Documents/project/android/core/Navi/PhoneCore/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/drawable-xhdpi-v4/abc_ic_clear_mtrl_alpha.png"
     },
     {
-        "merged": "/Users/mengxiangcheng/Documents/project/android/core/Navi/PhoneCore/build/intermediates/res/merged/androidTest/debug/drawable-xhdpi-v4/ic_loading4.png",
-        "source": "/Users/mengxiangcheng/Documents/project/android/core/Navi/PhoneCore/build/intermediates/bundles/debug/res/drawable-xhdpi-v4/ic_loading4.png"
-    },
-    {
         "merged": "/Users/mengxiangcheng/Documents/project/android/core/Navi/PhoneCore/build/intermediates/res/merged/androidTest/debug/drawable-xhdpi-v4/ic_loading0.png",
         "source": "/Users/mengxiangcheng/Documents/project/android/core/Navi/PhoneCore/build/intermediates/bundles/debug/res/drawable-xhdpi-v4/ic_loading0.png"
+    },
+    {
+        "merged": "/Users/mengxiangcheng/Documents/project/android/core/Navi/PhoneCore/build/intermediates/res/merged/androidTest/debug/drawable-xhdpi-v4/ic_loading4.png",
+        "source": "/Users/mengxiangcheng/Documents/project/android/core/Navi/PhoneCore/build/intermediates/bundles/debug/res/drawable-xhdpi-v4/ic_loading4.png"
     },
     {
         "merged": "/Users/mengxiangcheng/Documents/project/android/core/Navi/PhoneCore/build/intermediates/res/merged/androidTest/debug/drawable-xhdpi-v4/abc_textfield_default_mtrl_alpha.9.png",

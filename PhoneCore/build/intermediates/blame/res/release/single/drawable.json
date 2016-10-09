@@ -136,12 +136,12 @@
         "source": "/Users/mengxiangcheng/Documents/project/android/core/Navi/PhoneCore/res/drawable/shape_indicator_unselected_oval.xml"
     },
     {
-        "merged": "/Users/mengxiangcheng/Documents/project/android/core/Navi/PhoneCore/build/intermediates/res/merged/release/drawable/loading_03.png",
-        "source": "/Users/mengxiangcheng/Documents/project/android/core/Navi/PhoneCore/res/drawable/loading_03.png"
-    },
-    {
         "merged": "/Users/mengxiangcheng/Documents/project/android/core/Navi/PhoneCore/build/intermediates/res/merged/release/drawable/loading_05.png",
         "source": "/Users/mengxiangcheng/Documents/project/android/core/Navi/PhoneCore/res/drawable/loading_05.png"
+    },
+    {
+        "merged": "/Users/mengxiangcheng/Documents/project/android/core/Navi/PhoneCore/build/intermediates/res/merged/release/drawable/loading_03.png",
+        "source": "/Users/mengxiangcheng/Documents/project/android/core/Navi/PhoneCore/res/drawable/loading_03.png"
     },
     {
         "merged": "/Users/mengxiangcheng/Documents/project/android/core/Navi/PhoneCore/build/intermediates/res/merged/release/drawable/abc_btn_borderless_material.xml",

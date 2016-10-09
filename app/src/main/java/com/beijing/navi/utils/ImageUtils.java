@@ -11,7 +11,7 @@ import android.text.TextUtils;
 import android.widget.ImageView;
 
 import com.android.core.constant.LogConstant;
-import com.android.core.utils.LogUtils;
+import com.android.core.utils.phone.LogUtils;
 import com.android.volley.toolbox.ImageLoader;
 import com.beijing.navi.BaseActivity;
 import com.beijing.navi.R;

@@ -3,8 +3,8 @@ package com.beijing.navi.utils.image;
 import android.content.Context;
 
 import com.android.core.constant.LogConstant;
-import com.android.core.utils.LogUtils;
-import com.core.api.utils.FileUtils;
+import com.android.core.utils.File.FileUtils;
+import com.android.core.utils.phone.LogUtils;
 import com.facebook.cache.common.CacheErrorLogger;
 import com.facebook.cache.disk.DiskCacheConfig;
 import com.facebook.common.internal.Supplier;

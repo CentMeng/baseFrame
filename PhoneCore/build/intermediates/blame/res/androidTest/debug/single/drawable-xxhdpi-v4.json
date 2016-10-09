@@ -156,12 +156,12 @@
         "source": "/Users/mengxiangcheng/Documents/project/android/core/Navi/PhoneCore/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/drawable-xxhdpi-v4/abc_ic_go_search_api_mtrl_alpha.png"
     },
     {
-        "merged": "/Users/mengxiangcheng/Documents/project/android/core/Navi/PhoneCore/build/intermediates/res/merged/androidTest/debug/drawable-xxhdpi-v4/abc_ic_star_half_black_36dp.png",
-        "source": "/Users/mengxiangcheng/Documents/project/android/core/Navi/PhoneCore/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/drawable-xxhdpi-v4/abc_ic_star_half_black_36dp.png"
-    },
-    {
         "merged": "/Users/mengxiangcheng/Documents/project/android/core/Navi/PhoneCore/build/intermediates/res/merged/androidTest/debug/drawable-xxhdpi-v4/abc_ic_star_black_16dp.png",
         "source": "/Users/mengxiangcheng/Documents/project/android/core/Navi/PhoneCore/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/drawable-xxhdpi-v4/abc_ic_star_black_16dp.png"
+    },
+    {
+        "merged": "/Users/mengxiangcheng/Documents/project/android/core/Navi/PhoneCore/build/intermediates/res/merged/androidTest/debug/drawable-xxhdpi-v4/abc_ic_star_half_black_36dp.png",
+        "source": "/Users/mengxiangcheng/Documents/project/android/core/Navi/PhoneCore/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/drawable-xxhdpi-v4/abc_ic_star_half_black_36dp.png"
     },
     {
         "merged": "/Users/mengxiangcheng/Documents/project/android/core/Navi/PhoneCore/build/intermediates/res/merged/androidTest/debug/drawable-xxhdpi-v4/abc_cab_background_top_mtrl_alpha.9.png",

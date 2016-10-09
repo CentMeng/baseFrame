@@ -2,11 +2,11 @@ package com.beijing.navi.utils;
 
 import android.content.Context;
 
+import com.android.core.utils.phone.NetWorkUtils;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.beijing.navi.BaseActivity;
 import com.beijing.navi.R;
-import com.core.api.utils.NetWorkUtils;
 
 
 public class GlobalWlanErrorListener implements Response.ErrorListener {

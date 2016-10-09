@@ -5,13 +5,13 @@ import android.content.Context;
 import android.support.multidex.MultiDex;
 import android.text.TextUtils;
 
-import com.android.core.utils.SharePreferenceStorageService;
+import com.android.core.utils.File.FileUtils;
+import com.android.core.utils.phone.SharePreferenceStorageService;
 import com.android.core.utils.tools.MemorySpaceUtils;
 import com.beijing.navi.utils.UploadUtil;
 import com.core.api.event.response.param.ContextParam;
 import com.core.api.event.response.param.StatisticsParam;
 import com.core.api.event.response.param.UserParam;
-import com.core.api.utils.FileUtils;
 import com.google.gson.Gson;
 import com.qiniu.android.storage.UploadManager;
 
@@ -56,7 +56,6 @@ public class GlobalPhone extends LitePalApplication {
         super.onCreate();
         preferenceStorageService = SharePreferenceStorageService.newInstance(getApplicationContext());
         instance = this;
-        contextParam = getContextParam();
         notificationManager = (NotificationManager) this
                 .getSystemService(Context.NOTIFICATION_SERVICE);
         //极光推送设置标签
@@ -244,15 +243,6 @@ public class GlobalPhone extends LitePalApplication {
         this.autoApkDownload = autoApkDownload;
     }
 
-
-    public static ContextParam getContextParam() {
-        if (contextParam != null) {
-            return contextParam;
-        } else {
-            contextParam = preferenceStorageService.getContextParam();
-            return contextParam;
-        }
-    }
 
 
 }

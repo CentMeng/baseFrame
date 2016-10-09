@@ -5,8 +5,8 @@ import android.content.Intent;
 import android.text.TextUtils;
 
 import com.android.core.constant.LogConstant;
-import com.android.core.utils.LogUtils;
-import com.android.core.utils.SharePreferenceStorageService;
+import com.android.core.utils.phone.LogUtils;
+import com.android.core.utils.phone.SharePreferenceStorageService;
 import com.android.core.utils.Text.StringUtils;
 import com.beijing.navi.utils.ImageUtils;
 

@@ -143,8 +143,8 @@ dependencies {
     compile 'com.android.support:recyclerview-v7:23.0.1'
     compile 'com.android.support:appcompat-v7:23.4.0'
     compile 'com.umeng.analytics:analytics:latest.integration'
-    releaseCompile project(path: ':PhoneCore', configuration: 'release')
-    debugCompile project(path: ':PhoneCore', configuration: 'debug')
+    releaseCompile project(path: ':HttpApiCore', configuration: 'release')
+    debugCompile project(path: ':HttpApiCore', configuration: 'debug')
 }
 
 apt {

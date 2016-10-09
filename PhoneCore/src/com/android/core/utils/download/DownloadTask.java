@@ -5,9 +5,9 @@ import android.os.Environment;
 import android.widget.Toast;
 
 import com.android.core.constant.LogConstant;
-import com.android.core.utils.LogUtils;
+import com.android.core.utils.File.FileUtils;
+import com.android.core.utils.phone.LogUtils;
 import com.android.core.utils.tools.MemorySpaceUtils;
-import com.core.api.utils.FileUtils;
 
 import java.io.File;
 import java.io.IOException;

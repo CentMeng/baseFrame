@@ -4,7 +4,7 @@ import android.os.Environment;
 import android.os.StatFs;
 
 import com.android.core.constant.LogConstant;
-import com.android.core.utils.LogUtils;
+import com.android.core.utils.phone.LogUtils;
 
 import java.io.File;
 

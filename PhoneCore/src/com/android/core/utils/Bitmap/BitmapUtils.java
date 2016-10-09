@@ -13,7 +13,7 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.media.ExifInterface;
 
-import com.android.core.utils.LogUtils;
+import com.android.core.utils.phone.LogUtils;
 
 import java.io.BufferedInputStream;
 import java.io.ByteArrayInputStream;
@@ -23,12 +23,12 @@ import java.io.FileInputStream;
 import java.io.IOException;
 
 /**
- * @author CentMeng csdn@vip.163.com on 15/11/3.
+ * @author Vincent.M
+ * @date 16/9/13 下午3:31
+ * @copyright ©2016 孟祥程 All Rights Reserved
+ * @desc Bitmap工具类
  */
 public class BitmapUtils {
-
-
-
     /**
      * 质量压缩方法
      *
@@ -53,13 +53,11 @@ public class BitmapUtils {
 
 
     /**
-     * 新
      *
+     * 根据路径获取
      * @param path
      * @return
      */
-
-
     public static Bitmap getBitmapFromUri(String path) {
 
         return BitmapFactory.decodeStream(new ByteArrayInputStream(imgToByteArrayOutputStream(path).toByteArray()));
@@ -243,6 +241,10 @@ public class BitmapUtils {
         return os;
     }
 
+    /**
+     * 回收Bitmap
+     * @param bitmap
+     */
     public static void recycleBitmap(Bitmap bitmap) {
         if (bitmap != null && !bitmap.isRecycled()) {
             bitmap.recycle();

@@ -5,7 +5,8 @@ import android.content.Intent;
 import android.text.TextUtils;
 import android.widget.ImageView;
 
-import com.android.core.utils.LogUtils;
+import com.android.core.utils.phone.LogUtils;
+import com.android.core.utils.phone.NetWorkUtils;
 import com.android.volley.Request;
 import com.android.volley.Request.Method;
 import com.android.volley.Response.Listener;
@@ -19,7 +20,6 @@ import com.core.api.ApiSettings;
 import com.core.api.common.GsonRequestExt;
 import com.core.api.common.HttpService;
 import com.core.api.event.ApiRequest;
-import com.core.api.utils.NetWorkUtils;
 import com.core.api.utils.cache.BitmapCache;
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;

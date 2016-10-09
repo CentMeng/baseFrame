@@ -84,12 +84,12 @@
         "source": "/Users/mengxiangcheng/Documents/project/android/core/Navi/PhoneCore/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/drawable/abc_ratingbar_small_material.xml"
     },
     {
-        "merged": "/Users/mengxiangcheng/Documents/project/android/core/Navi/PhoneCore/build/intermediates/res/merged/androidTest/debug/drawable/design_fab_background.xml",
-        "source": "/Users/mengxiangcheng/Documents/project/android/core/Navi/PhoneCore/build/intermediates/exploded-aar/com.android.support/design/23.3.0/res/drawable/design_fab_background.xml"
-    },
-    {
         "merged": "/Users/mengxiangcheng/Documents/project/android/core/Navi/PhoneCore/build/intermediates/res/merged/androidTest/debug/drawable/abc_tab_indicator_material.xml",
         "source": "/Users/mengxiangcheng/Documents/project/android/core/Navi/PhoneCore/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/drawable/abc_tab_indicator_material.xml"
+    },
+    {
+        "merged": "/Users/mengxiangcheng/Documents/project/android/core/Navi/PhoneCore/build/intermediates/res/merged/androidTest/debug/drawable/design_fab_background.xml",
+        "source": "/Users/mengxiangcheng/Documents/project/android/core/Navi/PhoneCore/build/intermediates/exploded-aar/com.android.support/design/23.3.0/res/drawable/design_fab_background.xml"
     },
     {
         "merged": "/Users/mengxiangcheng/Documents/project/android/core/Navi/PhoneCore/build/intermediates/res/merged/androidTest/debug/drawable/abc_ratingbar_full_material.xml",
@@ -156,12 +156,12 @@
         "source": "/Users/mengxiangcheng/Documents/project/android/core/Navi/PhoneCore/build/intermediates/bundles/debug/res/drawable/layout_bg.xml"
     },
     {
-        "merged": "/Users/mengxiangcheng/Documents/project/android/core/Navi/PhoneCore/build/intermediates/res/merged/androidTest/debug/drawable/toast.png",
-        "source": "/Users/mengxiangcheng/Documents/project/android/core/Navi/PhoneCore/build/intermediates/bundles/debug/res/drawable/toast.png"
-    },
-    {
         "merged": "/Users/mengxiangcheng/Documents/project/android/core/Navi/PhoneCore/build/intermediates/res/merged/androidTest/debug/drawable/abc_text_cursor_material.xml",
         "source": "/Users/mengxiangcheng/Documents/project/android/core/Navi/PhoneCore/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.3.0/res/drawable/abc_text_cursor_material.xml"
+    },
+    {
+        "merged": "/Users/mengxiangcheng/Documents/project/android/core/Navi/PhoneCore/build/intermediates/res/merged/androidTest/debug/drawable/toast.png",
+        "source": "/Users/mengxiangcheng/Documents/project/android/core/Navi/PhoneCore/build/intermediates/bundles/debug/res/drawable/toast.png"
     },
     {
         "merged": "/Users/mengxiangcheng/Documents/project/android/core/Navi/PhoneCore/build/intermediates/res/merged/androidTest/debug/drawable/shape_indicator_selected_oval.xml",

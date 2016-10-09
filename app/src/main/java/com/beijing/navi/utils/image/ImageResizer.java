@@ -5,7 +5,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.util.Log;
 
-import com.android.core.utils.LogUtils;
+import com.android.core.utils.phone.LogUtils;
 
 import java.io.FileDescriptor;
 

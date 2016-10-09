@@ -41,7 +41,6 @@ public class JsonUtils {
 			}
 			return valueMap;
 		} catch (Exception e) {
-			// TODO: handle exception
 			e.printStackTrace();
 			// Log.e(HttpClientUtils.TAG, e.toString());
 		}
@@ -65,7 +64,6 @@ public class JsonUtils {
 				list.add(getMapForJson(jsonObj.toString()));
 			}
 		} catch (Exception e) {
-			// TODO: handle exception
 			e.printStackTrace();
 		}
 		return list;

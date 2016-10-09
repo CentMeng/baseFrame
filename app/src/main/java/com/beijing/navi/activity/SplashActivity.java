@@ -13,7 +13,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.android.core.utils.Text.StringUtils;
-import com.android.core.utils.phone.BaseTool;
+import com.android.core.utils.phone.BaseTools;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -103,7 +103,7 @@ public class SplashActivity extends BaseActivity {
         }
         setContentView(view);
 
-        String umeng_channel = BaseTool.getAppMetaData(this, "UMENG_CHANNEL");
+        String umeng_channel = BaseTools.getAppMetaData(this, "UMENG_CHANNEL");
         if (!isShowImage) {
             if (umeng_channel.equals("c360")) {
                 img_bottom.setVisibility(View.VISIBLE);

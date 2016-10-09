@@ -1,6 +1,8 @@
 package com.android.core.utils.File;
 
 import android.content.Context;
+import android.os.Environment;
+import android.text.TextUtils;
 
 import com.android.core.R;
 import com.android.core.utils.Text.StringUtils;
@@ -21,19 +23,80 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 文件相关
- * @author mengxc
- *
+ * @author Vincent.M
+ * @date 16/10/09 下午6:50
+ * @copyright ©2016 孟祥程 All Rights Reserved
+ * @desc 文件工具类
  */
 public class FileUtils {
 
     public final static String FILE_EXTENSION_SEPARATOR = ".";
 
+    public static String SDPATH;
+
+    public String getSDPATH() {
+        return SDPATH;
+    }
+
+    public FileUtils() {
+        //得到当前外部存储设备的目录
+        SDPATH = Environment.getExternalStorageDirectory() + "/";
+        if (Environment.MEDIA_MOUNTED.equals(Environment
+                .getExternalStorageState())
+            // || !Environment.isExternalStorageRemovable()
+                ) {
+            try {
+                SDPATH = Environment.getExternalStorageDirectory() + "/";
+            } catch (Exception e) {
+                SDPATH = Environment.getRootDirectory() + "/";
+            }
+        } else {
+            SDPATH = Environment.getRootDirectory() + "/";
+        }
+
+    }
+
+    public File creatSDFile(String fileName) throws IOException {
+        File file = new File(SDPATH + fileName);
+        file.createNewFile();
+        return file;
+    }
+
+    public File creatSDDir(String dirName) {
+        File dir = new File(SDPATH + dirName);
+        dir.mkdir();
+        return dir;
+    }
+
+    public File write2SDFromInput(String path, String fileName, InputStream inputStream) {
+        // TODO Auto-generated method stub
+        File file = null;
+        OutputStream output = null;
+        try {
+            creatSDDir(path);
+            file = creatSDFile(path + fileName);
+            output = new FileOutputStream(file);
+            byte buffer[] = new byte[4 * 1024];
+            while ((inputStream.read(buffer)) != -1) {
+                output.write(buffer);
+            }
+            output.flush();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                output.close();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
+        return file;
+    }
     /**
-     * 读文�?     * 
-     * @param 文件路径
-     * @param charsetName The name of a supported
-     * @return if file not exist, return null, else return content of file
+     * 读文件
+     * @param filePath 文件路径
+     * @param charsetName 支持的charse
+     * @return 如果文件不存在返回null，否则返回文件
      * @throws RuntimeException if an error occurs while operator BufferedReader
      */
     public static StringBuilder readFile(String filePath, String charsetName) {
@@ -70,12 +133,12 @@ public class FileUtils {
     }
 
     /**
-     * 写文�?     * 
-     * @param filePath
-     * @param content
-     * @param append is append, if true, write to the end of file, else clear content of file and write into it
-     * @return return true
-     * @throws RuntimeException if an error occurs while operator FileWriter
+     * 写文件
+     * @param filePath 路径地址
+     * @param content 内容
+     * @param append 是否继续写，true在后面继续，false则是覆盖之前的
+     * @return 成功
+     * @throws RuntimeException
      */
     public static boolean writeFile(String filePath, String content, boolean append) {
         FileWriter fileWriter = null;
@@ -99,7 +162,7 @@ public class FileUtils {
     }
 
     /**
-     * 写文�?     * 
+     * 覆盖方式写文件
      * @param filePath
      * @param stream
      * @return
@@ -110,7 +173,7 @@ public class FileUtils {
     }
 
     /**
-     * 写文�?     * 
+     * 写文件
      * @param file the file to be opened for writing.
      * @param stream the input stream
      * @param append if <code>true</code>, then bytes will be written to the end of the file rather than the beginning
@@ -122,7 +185,7 @@ public class FileUtils {
     }
 
     /**
-     * 写文�?     * 
+     * 覆盖写文件
      * @param file
      * @param stream
      * @return
@@ -187,7 +250,7 @@ public class FileUtils {
     }
 
     /**
-     * 读文件的字符串列表，�?��元素的列表是�?��路线
+     * 读文件的字符串列表
      * 
      * @param filePath
      * @param charsetName The name of a supported {@link java.nio.charset.Charset </code>charset<code>}
@@ -262,7 +325,7 @@ public class FileUtils {
     }
 
     /**
-     * 从路径获得文件名，包括后�?     * 
+     * 从路径获得文件名，包括后缀文件名
      * <pre>
      *      getFileName(null)               =   null
      *      getFileName("")                 =   ""
@@ -291,7 +354,7 @@ public class FileUtils {
     }
 
     /**
-     * 从路径获得的文件夹名�?     * 
+     * 从路径获得的文件夹名
      * <pre>
      *      getFolderName(null)               =   null
      *      getFolderName("")                 =   ""
@@ -357,7 +420,7 @@ public class FileUtils {
     }
 
     /**
-     * 创建目录的文件尾文件名命名，包括完整的目录路�?     * to create this directory. <br/>
+     * 创建目录的文件尾文件名命名，包括完整的目录路径    * to create this directory. <br/>
      * <br/>
      * <ul>
      * <strong>Attentions:</strong>
@@ -535,5 +598,96 @@ public class FileUtils {
             e.printStackTrace();                                            //捕获异常并打印
         }
         return result;
+    }
+
+
+    /**
+     * 获取缓存路径地址
+     * @param context
+     * @return
+     */
+    public static String getDiskCachePath(Context context){
+        String cachePath;
+        if (Environment.MEDIA_MOUNTED.equals(Environment
+                .getExternalStorageState())
+            // || !Environment.isExternalStorageRemovable()
+                ) {
+            try {
+                ///sdcard/Android/data/<application package>/cache
+                //getExternalFilesDir()方法可以获取到 SDCard/Android/data/你的应用的包名/files/ 目录，一般放一些长时间保存的数据  files对应设置中的清楚数据
+                //通过Context.getExternalCacheDir()方法可以获取到 SDCard/Android/data/你的应用包名/cache/目录，一般存放临时缓存数据  cache对应设置中的清楚缓存
+                cachePath = context.getExternalCacheDir().getPath();
+            } catch (Exception e) {
+                //getCacheDir()方法用于获取/data/data/<application package>/cache目录
+                //getFilesDir()方法用于获取/data/data/<application package>/files目录
+                cachePath = context.getCacheDir().getPath();
+            }
+        } else {
+            cachePath = context.getCacheDir().getPath();
+        }
+        return cachePath;
+    }
+
+    /**
+     * 创建和获取缓存路径 
+     *
+     * @param uniqueName
+     * @return
+     */
+    public static File getDiskCacheDir(Context context, String uniqueName) {
+        String cachePath = getDiskCachePath(context);
+
+        File file = new File(cachePath + File.separator + uniqueName);
+        file.mkdirs();
+        return file;
+    }
+
+    /**
+     * 获取缓存文件地址
+     * @param context
+     * @return
+     */
+    public static String getDiskFilePath(Context context,String type){
+        String cachePath;
+        if (Environment.MEDIA_MOUNTED.equals(Environment
+                .getExternalStorageState())
+            // || !Environment.isExternalStorageRemovable()
+                ) {
+            try {
+                ///sdcard/Android/data/<application package>/cache
+                //getExternalFilesDir()方法可以获取到 SDCard/Android/data/你的应用的包名/files/ 目录，一般放一些长时间保存的数据  files对应设置中的清楚数据
+                //通过Context.getExternalCacheDir()方法可以获取到 SDCard/Android/data/你的应用包名/cache/目录，一般存放临时缓存数据  cache对应设置中的清楚缓存
+                if (TextUtils.isEmpty(type)) {
+                    type = Environment.DIRECTORY_PICTURES;
+                }
+                cachePath = context.getExternalFilesDir(type).getPath();
+            } catch (Exception e) {
+                //getCacheDir()方法用于获取/data/data/<application package>/cache目录
+                //getFilesDir()方法用于获取/data/data/<application package>/files目录
+                cachePath = context.getFilesDir().getPath();
+            }
+        } else {
+            cachePath = context.getCacheDir().getPath();
+        }
+        return cachePath;
+    }
+
+    /**
+     * 创建和获取数据保存路径 
+     *
+     * @param context
+     * @param uniqueName 后缀文件夹
+     * @param type       文件类型，空则默认
+     * @return
+     */
+    public static File getDiskFileDir(Context context, String uniqueName, String type) {
+
+        String cachePath = getDiskFilePath(context,type);
+        File file = new File(cachePath);
+        if(!TextUtils.isEmpty(uniqueName)){
+            file = new File(cachePath + File.separator + uniqueName);
+        }
+        file.mkdirs();
+        return file;
     }
 }

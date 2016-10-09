@@ -15,10 +15,10 @@ import android.widget.LinearLayout;
 
 import com.android.core.utils.Bitmap.BitmapUtils;
 import com.android.core.utils.Bitmap.Path;
+import com.android.core.utils.File.FileUtils;
 import com.android.volley.Response;
 import com.core.api.ApiSettings;
 import com.core.api.event.request.UploadTokenRequest;
-import com.core.api.utils.FileUtils;
 import com.qiniu.android.http.ResponseInfo;
 import com.qiniu.android.storage.UpCompletionHandler;
 
